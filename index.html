@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/svg+xml" href="./assets/Cat.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles.css">
+    <title>Clikers</title>
+</head>
+<body>
+    <div class="page-wrapper">
+        <div class="presentation">
+            <h1>Clickers !</h1>
+        </div>
+        <div class="games">
+            <div class="game-card">
+                <div id="lineContainer">
+                    <div id="line">
+                        <div id="cursor"></div>
+                    </div>
+                    <button id="clickButton">Clic !</button>
+                </div>
+            </div>
+            <div class="game-card">
+                <div class="bulbContainer">
+                    <div id="bulb"></div>
+                    <div class="controls">
+                        <p>Énergie : <span id="energy-count">0</span>%</p>
+                        <button id="light-button"> >> CLICK << </button>
+                        <p id="win">Je suis dans la pénombre, donne moi de l'énergie !</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="./script.js"></script>
+</body>
+</html>
