@@ -5,6 +5,7 @@ const lineButton = document.getElementById('clickButton');
 let position = -1; 
 const step = 0.15; 
 const maxPosition = 24; 
+const minPosition = -1;
 
 lineButton.addEventListener('click', () => {
   if (position + step >= maxPosition) {
@@ -16,6 +17,13 @@ lineButton.addEventListener('click', () => {
   position += step;
   cursor.style.left = position + 'rem'; 
 });
+
+setInterval(() => {
+  if (position - step >= minPosition) {
+    position -= step;
+    cursor.style.left = position + 'rem';
+  }
+}, 1000);
 
 //Bulb
 let energy = 0;
