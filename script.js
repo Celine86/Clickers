@@ -23,7 +23,7 @@ setInterval(() => {
     position -= step;
     cursor.style.left = position + 'rem';
   }
-}, 1000);
+}, 500);
 
 //Bulb
 let energy = 0;
