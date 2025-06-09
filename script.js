@@ -90,7 +90,7 @@ function checkWin() {
   if (activeCount === total) {
     victoryMessage.textContent = "Victoire !";
   } else {
-    victoryMessage.textContent = "Encore un effort !";
+    victoryMessage.textContent = "Clic sur les points !";
   }
 }
 
