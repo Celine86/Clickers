@@ -62,3 +62,48 @@ setInterval(() => {
 }, 500);
 
 updateBulb();
+
+//Dots
+const grid = document.getElementById('dotGrid');
+const status = document.querySelector('.status');
+const victoryMessage = document.getElementById('victory');
+const total = 25;
+const dots = [];  
+
+function activateDot(index) {
+  const { el } = dots[index];
+  el.classList.add('active');
+  dots[index].active = true;
+  checkWin();
+
+  dots[index].timer = setTimeout(() => {
+    el.classList.remove('active');
+    dots[index].active = false;
+    checkWin();
+  }, 9500);
+}
+
+function checkWin() {
+  const activeCount = dots.filter(n => n.active).length;
+  status.textContent = `Points activés : ${activeCount}/${total}`;
+  
+  if (activeCount === total) {
+    victoryMessage.textContent = "Victoire !";
+  } else {
+    victoryMessage.textContent = "Encore un effort !";
+  }
+}
+
+for (let i = 0; i < total; i++) {
+  const div = document.createElement('div');
+  div.classList.add('dot');
+  grid.appendChild(div);
+  
+  dots.push({ el: div, active: false, timer: null });
+  
+  div.addEventListener('click', () => {
+    if (!dots[i].active) {
+      activateDot(i);
+    }
+  });
+}
